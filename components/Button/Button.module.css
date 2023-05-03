@@ -1,0 +1,17 @@
+.button {
+    width: 30px;
+    height: 30px;
+    background: #222222 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 100px;
+    position: relative;
+}
+
+.buttonBolt {
+    color: #F8F8F2;
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    font-size: 16px;
+    transform: translateX(50%);
+}
