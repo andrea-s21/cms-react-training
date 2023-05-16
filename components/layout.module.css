@@ -1,7 +1,7 @@
 .container {
-max-width: 36rem;
-padding: 0 1rem;
-margin: 3rem auto 6rem;
+min-width: 36rem;
+display: flex;
+flex-direction: column;
 }
   
 .header {
@@ -12,4 +12,11 @@ align-items: center;
   
 .backToHome {
 margin: 3rem 0 0;
+}
+
+.comicContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
