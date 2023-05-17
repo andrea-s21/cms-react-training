@@ -5,10 +5,9 @@ import Details from '../Details/Details';
 import Image from 'next/image';
 
 export default function ComicCard(props:{id: number, thumbnail: any, title: string, issueNumber: number, creators: any }) {
-  const myLoader = ({ src }) => {
-    return `${props.thumbnail}`
+  const myLoader = ({ src, width, quality }) => {
+    return `${props.thumbnail}`;
   }
-  
 
   return (
     <div className={styles.comicCard}> 
@@ -21,7 +20,6 @@ export default function ComicCard(props:{id: number, thumbnail: any, title: stri
         height={600}
         alt="thumbnail"
       />  
-      {/* <img src={props.thumbnail} alt="thumbnail" />      */}
       <Button />
       <Details             
         title={props.title}
