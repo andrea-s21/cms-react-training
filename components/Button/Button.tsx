@@ -1,16 +1,70 @@
-import styles from '../Button/Button.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBoltLightning } from '@fortawesome/free-solid-svg-icons'
-// import ReactDOM from 'react-dom'
+import styles from '../Button/Button.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBoltLightning } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 
-// const element = <FontAwesomeIcon icon={faLightningBolt} />
-// ReactDOM.render(element, document.body)
+interface Comic {
+  id: number;
+  thumbnail: any;
+  title: string;
+  issueNumber: number;
+}
 
-export default function Button() {
+interface ButtonProps {
+  title: string;
+  id: number;
+  issueNumber: number;
+  thumbnail: any;
+  handleAddToFavorites: (newComic: Comic) => void;
+
+}
+
+export default function Button(props: ButtonProps) {
+  const [isFavorite, setFavorite] = useState(false);
+
+
+  const handleFavorite = () => {
+    const storedFavorites = localStorage.getItem("favorites");
+    let favorites: Comic[] = [];
+
+    if (storedFavorites) {
+      favorites = JSON.parse(storedFavorites);
+    }
+
+    const isComicFavorite = favorites.some((c) => c.id === props.id);
+
+    if (isComicFavorite) {
+      favorites = favorites.filter((c) => c.id !== props.id);
+    } else {
+      const comic: Comic = {
+        id: props.id,
+        thumbnail: props.thumbnail,
+        title: props.title,
+        issueNumber: props.issueNumber,
+      };
+
+      if (favorites.length >= 10) {
+        // Limit reached, do not add the comic
+        return;
+      }
+
+      favorites = [...favorites, comic];
+    }
+    console.log('udatedFavorites', favorites)
+    setFavorite(!isComicFavorite);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  };
+
+  const handleClick = () => {
+    props.handleAddToFavorites(props);
+    setFavorite(!isFavorite);
+  };
+
   return (
-    <div className={styles.button}>
-      <FontAwesomeIcon className={styles.buttonBolt} icon={faBoltLightning} />
-      {/* <button className={styles.button} onClick={props.handleClick}>Get Comics</button> */}
-    </div>
+    <button id={styles.button} className={isFavorite ? styles.buttonBolt : styles.buttonIcon} onClick={handleClick} >
+      <FontAwesomeIcon
+        icon={faBoltLightning}
+      />
+    </button>
   );
 }

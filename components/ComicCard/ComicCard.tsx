@@ -4,10 +4,28 @@ import Button from '../Button/Button';
 import Details from '../Details/Details';
 import Image from 'next/image';
 
-export default function ComicCard(props:{id: number, thumbnail: any, title: string, issueNumber: number, creators: any }) {
+
+interface Comic {
+  id: number;
+  thumbnail: any;
+  title: string;
+  issueNumber: number;
+}
+interface ComicCardProps {
+  id: number;
+  thumbnail: any;
+  title: string;
+  issueNumber: number;
+  creators: any;
+  favoriteComics: Comic[];
+  handleAddToFavorites: (newComic: Comic) => void;
+}
+
+export default function ComicCard(props: ComicCardProps) {
   const myLoader = ({ src, width, quality }) => {
-    return `${props.thumbnail}`;
+    return `${props.thumbnail}?w=${width}&q=${quality || 75}`;
   }
+
 
   return (
     <div className={styles.comicCard}> 
@@ -20,11 +38,15 @@ export default function ComicCard(props:{id: number, thumbnail: any, title: stri
         height={600}
         alt="thumbnail"
       />  
-      <Button />
+      <Button 
+        title={props.title}
+        id={props.id}
+        issueNumber={props.issueNumber}
+        thumbnail={props.thumbnail}
+        handleAddToFavorites={props.handleAddToFavorites}
+      />
       <Details             
         title={props.title}
-        key={props.id}
-        id={props.id}
         issueNumber={props.issueNumber}
         creators={props.creators} 
         />

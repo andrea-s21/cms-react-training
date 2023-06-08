@@ -1,0 +1,36 @@
+.footer {
+    background-color: #222222;
+    min-height: 200px;
+    margin-top: 20px;
+  }
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: #f8f8f2;
+    margin: 10px 50px 0px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    gap: 20px;
+  }
+  
+.footerContent > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+.footerContent > p {
+    margin: 0;
+    font: normal normal normal 14px/16px Montserrat;
+    letter-spacing: 0px;
+    color: #F8F8F2;
+  }
+  
+  .logoFooter {
+    width: 100%;
+  }

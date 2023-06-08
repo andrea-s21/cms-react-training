@@ -1,23 +1,29 @@
 .heroImage {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  min-width: 365px;
+  height: auto;
+}
+
+.halftoneImage {
+  position: relative;
+  left: 0px;
+  width:  100%;
+  bottom: 65px;
+}
+
+@media (min-width: 768px) {
+  .halftoneImage {
+    bottom: 75px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .halftoneImage {
     position: relative;
+    bottom: 80px;
   }
+}
   
-  .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #f8f8f2;
-  }
   
-  .logoHero {
-    position: absolute;
-  }
-  
-  .halftone {
-    position: absolute;
-    top: 80%;
-    width: 100%;
-  }

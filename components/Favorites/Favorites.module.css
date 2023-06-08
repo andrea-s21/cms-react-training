@@ -1,0 +1,160 @@
+.favoritesButton {
+    background: #222222 0% 0% no-repeat padding-box;
+    font: normal normal bold 14px/16px Montserrat;
+    letter-spacing: 0px;
+    color: #F8F8F2;
+    min-width: 115px;
+    min-height: 57px;
+    border: none;
+    width: 100%;
+  }
+
+.favoritesButton > svg {
+  width: 9px;
+  height: 14px;
+  color: #F8F8F2;
+  margin-left: 5px;
+}
+
+  .menuOpen {
+    background-color: #fff;
+    display: none;
+  }
+
+  .menuOpen > div > ul > li {
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-bottom: 45px;
+  }
+
+  .menuOpen > div > ul {
+    padding: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 200px;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 10px;
+  }
+
+  .content > p {
+    font: normal normal normal 14px/17px Karla;
+    letter-spacing: 0px;
+    color: #F8F8F2;
+    margin: 0;
+  }
+
+  .title {
+    font: normal normal bold 14px/16px Karla;
+    letter-spacing: 0px;
+    color: #F8F8F2;
+  }
+
+  .favoritesButtonDesktop {
+    display: none;
+  }
+
+  .removeButton {
+    width: 35px;
+    height: 35px;
+    background: #F8F8F2 0% 0% no-repeat padding-box;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.8;
+    flex-basis: 35px;
+    position: relative;
+    left: 15px;
+    top: -10px;
+  }
+
+  .removeButton > svg {
+    color: #C24868;
+    width: 15px;
+    height: 15px;
+  }
+  
+  @media (max-width: 1025px) {
+  
+    .menuOpen {
+      padding: 20px;
+      display: flex;
+      position: absolute;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      color: #F8F8F2;
+      background-color: #222222;
+      margin-top: 50px;
+      bottom: auto;
+      height: auto;
+    }
+
+    .menuOpen > ul {
+      padding: 20px;
+      display: flex;
+      position: absolute;
+      bottom: -100%; 
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      color: #F8F8F2;
+      background-color: #222222;
+    }
+
+    .menuOpen > div > h2 {
+      font: normal normal 900 25px/30px Montserrat;
+    }
+
+    .favoritesContiner > p {
+      display: none;
+    }
+
+    .favoritesContiner > ul {
+      display: none;
+    }
+
+  }
+  
+  @media (min-width: 1025px) {
+    .favoritesButtonDesktop {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px;
+      grid-row: 2;
+      grid-column: 4;
+      background-color: #222222;
+      max-width: 300px;
+      height: auto;
+      min-height: 200px;
+      margin: 20px;
+    }
+
+    .favoritesButtonDesktop > div > ul > li {
+      list-style: none;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin-bottom: 45px;
+    }
+
+    .favoritesButtonDesktop > div > ul {
+      padding: 0;
+    }
+
+    .favoritesButtonDesktop > div > h2 {
+      font: normal normal 900 25px/30px Montserrat;
+      letter-spacing: 0.25px;
+      color: #F8F8F2;
+    }
+
+    .favoritesButtonDesktop > div > p {
+      font: normal normal 400 18px/30px Montserrat;
+      letter-spacing: 0.25px;
+      color: #F8F8F2;
+    }
+  }
