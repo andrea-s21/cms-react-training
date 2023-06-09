@@ -111,7 +111,7 @@ const Favorites: React.FC<FavoritesProps> = ({ favoriteComics, setFavoriteComics
               ))}
             </ul>
           )}
-          <button className={styles.favoritesButton} onClick={handleMenuToggle}>
+          <button className={styles.favoritesButtonHide} onClick={handleMenuToggle}>
             {isMenuOpen ? "Hide Favorites" : ""}
             <FontAwesomeIcon
               icon={faBoltLightning}

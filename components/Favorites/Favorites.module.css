@@ -9,11 +9,31 @@
     width: 100%;
   }
 
+.favoritesButtonHide {
+    display: flex;
+    background: #C24868 0% 0% no-repeat padding-box;
+    font: normal normal bold 14px/16px Montserrat;
+    letter-spacing: 0px;
+    color: #F8F8F2;
+    border: none;
+    width: 100%;
+    padding: 10px 100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.favoritesButtonHide > svg {
+    margin-left: 5px;
+    width: 9px;
+    height: 14px;
+  }
+
 .favoritesButton > svg {
-  width: 9px;
-  height: 14px;
-  color: #F8F8F2;
-  margin-left: 5px;
+    width: 9px;
+    height: 14px;
+    color: #F8F8F2;
+    margin-left: 5px;
+    
 }
 
   .menuOpen {
@@ -81,8 +101,7 @@
   @media (max-width: 1025px) {
   
     .menuOpen {
-      padding: 20px;
-      display: flex;
+      display: unset;
       position: absolute;
       left: 0;
       z-index: 1;
@@ -108,6 +127,11 @@
 
     .menuOpen > div > h2 {
       font: normal normal 900 25px/30px Montserrat;
+      margin-left: 25px;
+    }
+
+    .menuOpen > div > p {
+      margin-left: 25px;
     }
 
     .favoritesContiner > p {
@@ -156,5 +180,9 @@
       font: normal normal 400 18px/30px Montserrat;
       letter-spacing: 0.25px;
       color: #F8F8F2;
+    }
+
+    .favoritesButtonHide {
+      display: none;
     }
   }

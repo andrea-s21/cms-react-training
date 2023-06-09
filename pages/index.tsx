@@ -36,15 +36,17 @@ export default function Home() {
 
   const handleAddToFavorites = (newComic: Comic) => {
     if (favorites.length >= 10) {
-      return; // Limit reached, do not add the new comic
     }
     setFavorites((prevFavorites: Comic[]) => [...prevFavorites, newComic]);
     localStorage.setItem("favorites", JSON.stringify([...favorites, newComic]));
-    console.log('added')
-    console.log(favorites, 'favs')
   };
 
-  // Calculate the start and end index of the current page
+  const handleRemoveFromFavorites = (comicId: number) => {
+    const updatedFavorites = favorites.filter((comic) => comic.id !== comicId);
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
+
   const startIndex = (currentPage - 1) * maxDisplay;
   const endIndex = startIndex + maxDisplay;
 
@@ -84,6 +86,7 @@ export default function Home() {
             })}
             thumbnail={`${comic.thumbnail.path}/${IMG_FANTASTIC}.${comic.thumbnail.extension}`}
             handleAddToFavorites={handleAddToFavorites}
+            handleRemoveFromFavorites={handleRemoveFromFavorites}
             favoriteComics={favorites}
             />
           ))}

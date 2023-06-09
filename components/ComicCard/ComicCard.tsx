@@ -19,6 +19,7 @@ interface ComicCardProps {
   creators: any;
   favoriteComics: Comic[];
   handleAddToFavorites: (newComic: Comic) => void;
+  handleRemoveFromFavorites: (comicId: number) => void;
 }
 
 export default function ComicCard(props: ComicCardProps) {
@@ -44,6 +45,8 @@ export default function ComicCard(props: ComicCardProps) {
         issueNumber={props.issueNumber}
         thumbnail={props.thumbnail}
         handleAddToFavorites={props.handleAddToFavorites}
+        handleRemoveFromFavorites={props.handleRemoveFromFavorites}
+        favorites={props.favoriteComics}
       />
       <Details             
         title={props.title}
